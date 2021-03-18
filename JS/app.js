@@ -2,6 +2,8 @@
 //RENATO SALZANO
 //STAR2IMPACT PROJECT
 
+require('dotenv').config();
+
 'use strict'
 
 //VAR
