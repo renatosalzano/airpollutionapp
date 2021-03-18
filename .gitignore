@@ -1,0 +1,12 @@
+.env
+dist/
+src/
+node_modules/
+package-lock.json
+package.json
+CSS/mediaQ.css.map
+CSS/mediaQ.scss
+CSS/style.css.map
+dist/main.js
+CSS/style.scss
+webpack.config.js
