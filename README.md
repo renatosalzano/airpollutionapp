@@ -13,6 +13,7 @@ Simple app to know the pollution levels in your city devolped in pure JS
 #### Feature
 
 - [x] Minimal Design
+- [x] Simple graph with main pollutants
 - [x] Full responsive
 
 
