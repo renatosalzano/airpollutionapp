@@ -1,10 +1,8 @@
 .env
-dist/
 node_modules/
 CSS/mediaQ.css.map
 CSS/mediaQ.css
 CSS/style.css.map
-dist/main.js
 CSS/style.css
 JS/BACKUP/
 index.html.BACKUP
