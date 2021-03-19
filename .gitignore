@@ -2,9 +2,9 @@
 dist/
 node_modules/
 CSS/mediaQ.css.map
-CSS/mediaQ.scss
+CSS/mediaQ.css
 CSS/style.css.map
 dist/main.js
-CSS/style.scss
-JS/app.min.js.BACKUP
+CSS/style.css
+JS/BACKUP/
 index.html.BACKUP
