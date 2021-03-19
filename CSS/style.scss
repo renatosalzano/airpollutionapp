@@ -1,0 +1,419 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+input{
+    outline-style: none;
+}
+html,body{
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --br: 16px;
+    --font: 16px;
+    --principalColor: rgb(0, 132, 255);
+}
+.screen{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    min-height: 100%;
+    height: 100%;
+}
+//HEADER-----------------------
+.header{
+    --flogo: 60px;
+    --fname: 40px;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: calc(50% - 70px);
+    width: 100%;
+    height: 36px;
+    .logo{
+        font-size: var(--flogo);
+        color: var(--principalColor);
+    }
+    .nameApp{
+        font-family: 'Roboto';
+        font-size: var(--fname);
+        font-weight: 400;
+        margin: 0;
+        padding: 0;
+        padding-left: 4px;
+    }
+
+}
+.headerUp{
+    --flogo: 30px;
+    --fname: 22px;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    top: 10px;
+    left: 10px;
+    width: 100%;
+    height: 36px;
+}
+//BUTTON-----------------------
+.btnBar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+    font-size: 22px;
+    
+    transition: 0.2s;
+    z-index: 200;
+    cursor: pointer;
+
+}
+#gps{
+    position: absolute;
+
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    right: -46px;
+    
+}
+#search{
+    position: absolute;
+    right: 0;
+    color: rgba(0, 0, 0, 0.4);
+}
+.pending{
+    color: rgb(255, 165, 29);
+}
+.success{
+    color: var(--principalColor);
+}
+.err{
+    background: rgb(218, 35, 35);
+    color: white;
+}
+//SEARCH BAR----------------------------
+.searchBox{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    form{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+    }
+}
+.barStyle{
+    width: 100%;
+    height: 36px;
+    padding: 6px 20px 6px 20px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: var(--br);
+
+    font-family: 'Roboto';
+    font-size: var(--font);
+}
+.resultBox{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    border-radius: var(--br);
+    z-index: 500;
+
+    .closeBtn{
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        right: 0;
+        width: 36px;
+        height: 36px;
+        font-size: 22px;
+        color: rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+        &:hover{
+            color: rgb(175, 51, 51);
+            
+        }
+    }
+    
+    .datalist{
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        width: 100%;
+        border-radius: 0 0 var(--br) var(--br);
+        background: white;
+        
+        .option{
+            padding: 6px 10px 6px 20px;
+            font-size: var(--font);
+            &:hover{
+                background: rgb(204, 204, 204);
+            }
+        }
+    }
+}
+.open{
+    border-radius: var(--br) var(--br) 0 0;
+    border: none;
+    overflow: clip;
+}
+.close{
+    display: none !important;
+}
+.shadow{
+    box-shadow: 0 0px 2px rgba(0, 0, 0, 0.3),
+     0 8px 10px rgba(0, 0, 0, 0.2) !important;
+}
+.hidden{
+    display: none;
+}
+.fix{
+    position: relative;
+}
+.upper{
+    justify-content: flex-start;
+    row-gap: 10px;
+    padding-top: 10px;
+}
+
+//CARD--------------------------------
+.cardBox{
+    --fAqi: 60px;
+    --fBig: 36px;
+    --fMid: 18px;
+    --fSml: 16px;
+    --fAle: 22px;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "aqi city"
+    "aqi station"
+    "alert alert"
+    "tips tips"
+    "gtitle gtitle"
+    "graph graph";
+    overflow: hidden;
+    border-radius: var(--br);
+    width: 600px;
+    font-family: 'Roboto';
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: 0.2s;
+    
+    .city{
+        grid-area: city;
+        font-size: var(--fBig);
+        text-align: end;
+        padding: 10px 20px 0 20px;
+        color: white;
+        text-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+    }
+    .station{
+        grid-area: station;
+        font-size: var(--fMid);
+        padding: 10px 20px 0 20px;
+        text-align: end;
+        color: white;
+        text-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+    }
+    .aqi{
+        grid-area: aqi;
+        display: flex;
+        align-items: baseline;
+        text-align: start;
+        padding: 10px 20px 0 20px;
+        color: white;
+        text-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+
+        .aqiNum{
+            font-size: var(--fAqi);
+        }
+        .aqiNam{
+            font-size: var(--fBig);
+        }
+    }
+    
+    .alert{
+        grid-area: alert;
+        padding: 0 0 10px 20px;
+        text-align: start;
+        text-transform: uppercase;
+        font-size: var(--fMid);
+        font-weight: 600;
+        letter-spacing: 4px;
+        color: white;
+        text-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+        
+    }
+    .tips{
+        padding: 20px;
+        grid-area: tips;
+        font-size: var(--fMid);
+        font-weight: 300;
+    }
+    .gtitle{
+        grid-area: gtitle;
+        text-align: center;
+        font-size: var(--fSml);
+        font-weight: 800;
+        letter-spacing: 5px;
+        color: rgba(0, 0, 0, 0.4);
+    }
+    .graph{
+        position: relative;
+        grid-area: graph;
+        width: 100%;
+        height: 150px;
+        display: grid;
+        grid-template-columns: 25% 25% 25% 25%;
+        grid-template-rows: auto 20%;
+        grid-template-areas:
+        "pm25g pm10g no2g o3g"
+        "pm25 pm10 no2 o3";
+        justify-items: center;
+        align-items: flex-end;
+        .grid{
+            grid-area: 1 / 1 / span 1 / span 4;
+            grid-template-columns: auto;
+            grid-template-rows: auto auto auto auto auto auto;
+            grid-template-areas:
+            "bar5"
+            "bar4"
+            "bar3"
+            "bar2"
+            "bar1"
+            "bar0";
+            width: 100%;
+            height: 100%;
+            display: grid;
+
+
+            .bar{
+                width: 100%;
+                height: 1px;
+                background: rgba(0, 0, 0, 0.1);
+            }
+            .bar0{grid-area: bar0;}
+            .bar1{grid-area: bar1;}
+            .bar2{grid-area: bar2;}
+            .bar3{grid-area: bar3;}
+            .bar4{grid-area: bar4;}
+        }
+        .ps{
+            padding: 5px;
+            height: 100%;
+            width: 100%;
+            border-top: 1px solid rgba(0, 0, 0, 0.2);
+            text-align: center;
+            font-size: var(--fSml);
+            font-weight: 800;
+            color: rgba(0, 0, 0, 0.5);
+        }
+
+        .pm25{
+            grid-area: pm25;
+            
+        }
+        .pm10{
+            grid-area: pm10;
+        }
+        .no2{
+            grid-area: no2;
+        }
+        .o3{
+            grid-area: o3;
+        }
+        .gbox{
+            width: 30px;
+        }
+
+        .pm25g{
+            --h: 0%;
+            grid-area: pm25g;
+            height: var(--h);
+            background: var(--color);
+        }
+        .pm10g{
+            --h: 0%;
+            grid-area: pm10g;
+            height: var(--h);
+            background: var(--color);
+        }
+        .no2g{
+            --h: 0%;
+            grid-area: no2g;
+            height: var(--h);
+            background: var(--color);
+        }
+        .o3g{
+            --h: 0%;
+            grid-area: o3g;
+            height: var(--h);
+            background: var(--color);
+        }
+    }
+    &:hover{
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.4);
+    }
+}
+.good{
+    background: rgb(108, 153, 24);
+}
+.moderate{
+    background: rgb(34, 140, 172);
+}
+.bitUnhealthy{
+    background: rgb(235, 157, 12);
+}
+.unhealthy{
+    background: rgb(221, 10, 10);
+}
+.veryUnhealthy{
+    background: rgb(153, 25, 25);
+}
+.hazard{
+    background: rgb(140, 0, 255);
+}
+
+.statusBar{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    font-family: 'Roboto';
+    width: 100%;
+    bottom: 0;
+    transition: 0.2s;
+}
+.err{
+    background: red;
+}
+.collapse{
+    bottom: -20px;
+}
+.noResult{
+    display: flex;
+    justify-content: center;
+    top: 0;
+    box-shadow: none;
+    text-align: center;
+    width: 100%;
+    &:hover{
+        box-shadow: none;
+    }
+}

@@ -1,0 +1,58 @@
+@media screen and (max-width: 900px) {
+    .searchBox{
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    :root{
+        --br: 26px;
+        //--font: 16px;
+    }
+
+    .headerUp{
+        height: 50px;
+        .logo{
+            font-size: 40px;
+        }
+        .nameApp{
+            display: none;
+        }
+    }
+    .btnBar{
+        width: 50px;
+        height: 50px;
+        font-size: 30px;
+    }
+    #gps{
+        right: 10px;
+        
+    }
+    #search{
+        right: 70px;
+    }
+    .searchBox{
+        width: 100%;
+        padding: 0 70px 0 60px;
+    }
+    .barStyle{
+        height: 50px;
+        
+    }
+    .resultBox{
+        left: 60px;
+        width: calc(100% - 130px);
+        .closeBtn{
+            width: 50px;
+            height: 50px;
+            font-size: 30px;
+        }
+    }
+    .cardBox{
+        --fAqi: 46px;
+        --fBig: 22px;
+        --fMid: 16px;
+        width: 96%;
+    }
+
+}
