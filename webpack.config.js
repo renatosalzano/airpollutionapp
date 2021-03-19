@@ -10,8 +10,8 @@ module.exports = {
     new Dotenv()
   ],
   output: {
-    filename: 'main.js',
-    path: path.resolve(__dirname, 'dist'),
+    filename: 'app.min.js',
+    path: path.resolve(__dirname, 'JS'),
   },
   module: {
     rules: [
