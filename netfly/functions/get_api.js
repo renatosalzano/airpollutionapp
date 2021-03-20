@@ -1,8 +1,8 @@
-const { API_KEY } = process.env;
+process.env.API_KEY;
 
 exports.handler = async (event, context) => {
   return {
     statusCode: 200,
-    body: API_KEY,
+    body: process.env.API_KEY,
   };
 };
